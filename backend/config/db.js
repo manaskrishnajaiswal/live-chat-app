@@ -1,3 +1,4 @@
+import colors from "colors";
 import mongoose from "mongoose";
 mongoose.set("strictQuery", true);
 import dotenv from "dotenv";
@@ -9,8 +10,6 @@ const connectDB = async () => {
     const conn = await mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
     });
     console.log(`MongoDB Connected: ${conn.connection.host}`.green.underline);
   } catch (error) {

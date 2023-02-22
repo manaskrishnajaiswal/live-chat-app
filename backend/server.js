@@ -13,14 +13,6 @@ connectDB();
 /// express server configuration
 const app = express();
 app.use(express.json());
-app.use(
-  session({
-    secret: "melody hensley is my spirit animal",
-    resave: true,
-    saveUninitialized: true,
-  })
-);
-
 // Body parser
 app.use(express.urlencoded({ extended: true }));
 
