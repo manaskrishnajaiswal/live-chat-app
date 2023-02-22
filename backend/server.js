@@ -20,8 +20,6 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-const port = process.env.PORT || 5000;
-
 app.use(notFound);
 app.use(errorHandler);
 app.use(function (req, res, next) {
@@ -33,11 +31,10 @@ app.use(function (req, res, next) {
   next();
 });
 
-// Root route
-app.get("/", (req, res) => {
-  res.send("Hello from the server!");
-});
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+const PORT = process.env.PORT || 5000;
+app.listen(
+  PORT,
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+  )
+);
