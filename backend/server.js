@@ -3,6 +3,7 @@ import morgan from "morgan";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import dotenv from "dotenv";
 dotenv.config();
+import rootRoute from "./routes/rootRoute.js";
 
 import connectDB from "./config/db.js";
 
@@ -19,6 +20,8 @@ app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+
+app.use("/", rootRoute);
 
 app.use(notFound);
 app.use(errorHandler);
