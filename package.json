@@ -15,11 +15,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@redux-devtools/extension": "^3.2.5",
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "concurrently": "^7.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "express-session": "^1.17.3",
     "mongoose": "^6.9.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
     "redis": "^4.6.4",
+    "redux-devtools-extension": "^2.13.9",
     "socket.io": "^4.6.1"
   }
 }
